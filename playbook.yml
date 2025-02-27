@@ -4,6 +4,10 @@
   vars:
     ansible_python_interpreter: /usr/bin/python3
   tasks:
+    - name: Install Python
+      raw: |
+        sudo apt update && sudo apt install -y python3
+      changed_when: false
     - name: Ensure Python is installed
       ansible.builtin.raw: python3 --version
     # Update apt cache
