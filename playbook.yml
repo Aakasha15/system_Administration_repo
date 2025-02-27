@@ -1,7 +1,11 @@
 ---
 - hosts: all
   become: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   tasks:
+    - name: Ensure Python is installed
+      ansible.builtin.raw: python3 --version
     # Update apt cache
     - name: Update apt cache
       apt:
