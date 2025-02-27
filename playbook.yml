@@ -4,6 +4,9 @@
   vars:
     ansible_python_interpreter: /usr/bin/python3
   tasks:
+    - name: Example task
+      ansible.builtin.debug:
+        msg: "Python is installed and working!"
     - name: Install Python
       raw: |
         sudo apt update && sudo apt install -y python3
